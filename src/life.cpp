@@ -29,7 +29,7 @@ void generateNextGeneration(Grid<char>& cells, Grid<char> temp, Grid<int> alivec
 // Now what I want to do is create a temporary grid and store in it the original grid then compute the next generation
 // on the copy and then reassign it to the original grid and then repeat
 
-int main2134() {
+int main() {
     greetings();
     int alive;
     Grid<char> cells;
@@ -87,7 +87,10 @@ void readTheGrid(Grid<char>& cells)
     c = stringToInteger(word);\
     cells.resize(r, c);
     for(int i = 0; i < r; i++)
-    {
+    { for(int c = 0; c < temp.numCols(); c++)
+        {
+            cout << temp[r][c];
+        }
         getline(file, word);
         for(int j = 0; j < c; j++)
         {
@@ -230,10 +233,10 @@ void generateNextGeneration(Grid<char>& cells, Grid<char> temp, Grid<int> aliveC
         cells = temp;
         for(int r = 0; r < temp.numRows(); r++)
         {
-        for(int c = 0; c < temp.numCols(); c++)
-        {
-            cout << temp[r][c];
-        }
+            for(int c = 0; c < temp.numCols(); c++)
+            {
+                cout << temp[r][c];
+            }
         cout << endl;
         }
 
